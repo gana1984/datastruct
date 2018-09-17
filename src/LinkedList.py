@@ -4,7 +4,7 @@ Created on September 10, 2018
 Create and use a singly connected linked list.
 
 Usage:
-a = LinkedList() creates and empty Linked List instance.
+a = LinkedList() creates an empty Linked List instance.
 
 Methods
 push () - adds a node at the beginning of the linked list.
@@ -21,7 +21,7 @@ reverse(recurse = False) - reverses the linked list in place.
 recurse = True uses the recursive method. Default is iterative method.
 
 print(reverse = False, recurse = False) - prints the linked list.
-reverse = True will print the link in reverse order.
+reverse = True will print the linked list in reverse order.
 recurse = True will use the recursive method to print.
 Default is forward, non-recursive.
 
