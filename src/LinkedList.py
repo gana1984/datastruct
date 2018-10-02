@@ -102,7 +102,6 @@ class LinkedList():
             raise ValueError('Cannot reverse an empty list')
             return
         if self.length == 1:
-            self.head = None
             return
         if recurse == False:
             current = self.head
