@@ -113,9 +113,6 @@ class DLL():
         if self.is_empty():
             raise ValueError('Cannot reverse an empty list')
             return
-        if self.length == 1:
-            self.head = None
-            return
         if recurse == False:
             current = self.head
             prev = None
