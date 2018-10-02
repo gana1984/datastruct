@@ -77,6 +77,8 @@ class DLL():
         if index == 0 or index == None:
             self.push(data)
             return
+        if index == self.length:
+            self.append(data)
         if index > self.length:
             raise ValueError('The given index exceeds list length')
             return
@@ -105,6 +107,10 @@ class DLL():
             return
         for i in range(0,index-1):
             temp = temp.get_next()
+        if index == self.length-1:
+            temp.set_next(None)
+            self.length-=1
+            return
         temp.get_next().get_next().set_prev(temp)
         temp.set_next(temp.get_next().get_next())
         self.length-=1
@@ -112,6 +118,8 @@ class DLL():
     def reverse(self, recurse=False):
         if self.is_empty():
             raise ValueError('Cannot reverse an empty list')
+            return
+        if self.length == 1:
             return
         if recurse == False:
             current = self.head
