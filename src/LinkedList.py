@@ -50,9 +50,9 @@ class LinkedList():
         return self.head == None
     
     def push(self,data):
-        temp = Node(data)
-        temp.set_next(self.head)
-        self.head = temp
+        newNode = Node(data)
+        newNode.set_next(self.head)
+        self.head = newNode
         self.length+=1
    
     def append(self,data):
@@ -72,12 +72,12 @@ class LinkedList():
         if index>self.length:
             raise ValueError('The given index exceeds list length')
             return
-        temp1 = Node(data)
-        temp2 = self.head
+        newNode = Node(data)
+        temp = self.head
         for i in range(0,index-1):
-            temp2 = temp2.get_next()
-        temp1.set_next(temp2.get_next())
-        temp2.set_next(temp1)
+            temp = temp.get_next()
+        newNode.set_next(temp.get_next())
+        temp.set_next(newNode)
         self.length+=1
 
     def delete(self,index = None):
@@ -102,6 +102,7 @@ class LinkedList():
             raise ValueError('Cannot reverse an empty list')
             return
         if self.length == 1:
+            self.head = None
             return
         if recurse == False:
             current = self.head
@@ -162,7 +163,7 @@ class LinkedList():
         
     def size(self):
         return self.length
-      
+ 
 ##Test Run        
 new = LinkedList()
 new.append(2)
