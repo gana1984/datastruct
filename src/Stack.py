@@ -51,12 +51,20 @@ class Stack():
             raise ValueError('Cannot delete from an empty stack')
             return
         head = self.head
+        if self.length == 1:
+            popped = head.get_data()
+            self.head = None
+            self.length-=1
+            return popped
         popped = head.get_data()
         self.head = head.get_next()
         self.length-=1
         return popped
     
     def print(self):
+        if self.is_empty():
+            print('Stack is empty')
+            return
         temp = self.head
         while temp:
             print(temp.get_data())
